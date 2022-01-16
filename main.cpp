@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <fstream>
 #include "create-contact.h"
+#include "display-contacts.h"
 using namespace std;
 
 int main()
@@ -26,6 +27,10 @@ int main()
             CreateContact contact;
             contact.getDetails();
             contact.addContact();
+        }
+        else if(choice == 5)
+        {
+            DisplayContacts d;
         }
         else if(choice == 0)
             exit(1);
