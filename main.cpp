@@ -4,6 +4,7 @@
 #include "add-contact.h"
 #include "display-contacts.h"
 #include "search-contact.h"
+#include "remove-contact.h"
 using namespace std;
 
 int main()
@@ -28,6 +29,10 @@ int main()
             AddContact contact;
             contact.getDetails();
             contact.addContact();
+        }
+        else if(choice == 2)
+        {
+            RemoveContact remove;
         }
         else if(choice == 3)
         {

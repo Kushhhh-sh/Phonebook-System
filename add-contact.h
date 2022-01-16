@@ -54,7 +54,7 @@ public:
         {
             ofstream out;
             out.open("contact-list.txt", ios_base::app);
-            out << "\n" << contactName;
+            out << contactName;
             
             if(contactName.length() > 7)
                 out << "\t\t\t\t\t";
@@ -65,6 +65,8 @@ public:
             {
                 out << mobileNumber[i] << " / ";
             }
+            out << "\n";
+            out.close();
         }
         else    
             cout << "Error";
