@@ -1,7 +1,7 @@
 #include <iostream>
 #include <stdlib.h>
 #include <fstream>
-#include "create-contact.h"
+#include "add-contact.h"
 #include "display-contacts.h"
 #include "search-contact.h"
 using namespace std;
@@ -25,7 +25,7 @@ int main()
 
         if (choice == 1)
         {
-            CreateContact contact;
+            AddContact contact;
             contact.getDetails();
             contact.addContact();
         }

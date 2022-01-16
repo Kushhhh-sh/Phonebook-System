@@ -5,7 +5,7 @@
 #include<cstring>
 using namespace std;
 
-class CreateContact
+class AddContact
 {
 private:
     string contactName;
