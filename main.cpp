@@ -31,7 +31,11 @@ int main()
         }
         else if(choice == 3)
         {
-            SearchContacts search;
+            string token;
+            system("cls");
+            cout << "Enter the Keyword you want to search: ";
+            cin >> token;
+            SearchContacts search(token);
         }
         else if(choice == 5)
         {

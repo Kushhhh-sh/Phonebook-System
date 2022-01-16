@@ -3,6 +3,7 @@
 #include <fstream>
 #include <stdlib.h>
 #include <conio.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 class SearchContacts
@@ -13,11 +14,9 @@ private:
     ifstream stream;
 
 public:
-    SearchContacts()
+    SearchContacts(string token)
     {
-        system("cls");
-        cout << "Enter the Keyword you want to search: ";
-        cin >> token;
+        transform(token.begin(), token.end(), token.begin(), ::tolower);
         stream.open("contact-list.txt");
         bool foundItem = false;
 
@@ -25,7 +24,9 @@ public:
 
         while (getline(stream, s))
         {
-            if (s.find(token) != string::npos)
+            string g = s;
+            transform(g.begin(), g.end(), g.begin(), ::tolower);
+            if (g.find(token) != string::npos)
             {
                 foundItem = true;
                 cout << s << endl;
@@ -41,8 +42,3 @@ public:
         stream.close();
     }
 };
-
-// void Keyword(, string token)
-// {
-//     string line;
-// }
