@@ -12,6 +12,7 @@ class DisplayContacts
 public:
     DisplayContacts()
     {
+        system("cls");
         in.open("contact-list.txt");
 
         string s;

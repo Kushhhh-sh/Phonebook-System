@@ -3,6 +3,7 @@
 #include <fstream>
 #include "create-contact.h"
 #include "display-contacts.h"
+#include "search-contact.h"
 using namespace std;
 
 int main()
@@ -28,12 +29,19 @@ int main()
             contact.getDetails();
             contact.addContact();
         }
+        else if(choice == 3)
+        {
+            SearchContacts search;
+        }
         else if(choice == 5)
         {
             DisplayContacts d;
         }
         else if(choice == 0)
+        {
+            system("cls");
             exit(1);
+        }
     }
     return 0;
 }
