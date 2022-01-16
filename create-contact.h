@@ -2,6 +2,7 @@
 #include <iostream>
 #include <stdlib.h>
 #include <fstream>
+#include<cstring>
 using namespace std;
 
 class CreateContact
@@ -53,7 +54,13 @@ public:
         {
             ofstream out;
             out.open("contact-list.txt", ios_base::app);
-            out << "\n" << contactName << "\t\t\t\t\t\t";
+            out << "\n" << contactName;
+            
+            if(contactName.length() > 7)
+                out << "\t\t\t\t\t";
+            else
+                out << "\t\t\t\t\t\t";
+
             for(int i = 0; i < no_of_contacts; i++)
             {
                 out << mobileNumber[i] << " / ";

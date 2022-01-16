@@ -16,6 +16,8 @@ int main()
         cout << "2. Remove a Contact\n";
         cout << "3. Search a Contact\n";
         cout << "4. Edit a Contact\n";
+        cout << "5. Display Contact list\n";
+        cout << "0. Exit\n";
         cout << "\nYour Choice: ";
         cin >> choice;
 
@@ -23,9 +25,10 @@ int main()
         {
             CreateContact contact;
             contact.getDetails();
-            // bool isTrue = contact.confirmDetails();
             contact.addContact();
         }
+        else if(choice == 0)
+            exit(1);
     }
     return 0;
 }
