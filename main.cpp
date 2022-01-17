@@ -5,10 +5,12 @@
 #include "display-contacts.h"
 #include "search-contact.h"
 #include "remove-contact.h"
+#include "edit-contact.h"
 using namespace std;
 
 int main()
 {
+    string token;
     while (1)
     {
         system("cls");
@@ -32,15 +34,24 @@ int main()
         }
         else if(choice == 2)
         {
-            RemoveContact remove;
+            system("cls");
+            cout << "Enter the name of the contact you want to delete: ";
+            getline(cin >> ws, token);
+            RemoveContact remove(token);
         }
         else if(choice == 3)
         {
-            string token;
             system("cls");
             cout << "Enter the Keyword you want to search: ";
             cin >> token;
             SearchContacts search(token);
+        }
+        else if(choice == 4)
+        {
+            system("cls");
+            cout << "Enter the name of the contact you want to edit: ";
+            getline(cin >> ws, token);
+            EditContact edit(token);
         }
         else if(choice == 5)
         {

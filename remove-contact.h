@@ -9,17 +9,13 @@ using namespace std;
 class RemoveContact
 {
 private:
-    string name;
     string line;
     ifstream in;
     ofstream out;
     bool contactDeleted = false;
 public:
-    RemoveContact()
+    RemoveContact(string name)
     {
-        system("cls");
-        cout << "Enter the name of the contact you want to delete: ";
-        getline(cin >> ws, name);
         transform(name.begin(), name.end(), name.begin(), ::tolower);
         in.open("contact-list.txt");
         out.open("temp.txt");

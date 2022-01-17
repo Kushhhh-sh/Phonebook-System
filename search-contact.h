@@ -10,7 +10,6 @@ class SearchContacts
 {
 private:
     string s;
-    string token;
     ifstream stream;
 
 public:
