@@ -2,9 +2,16 @@
 #include <iostream>
 #include <stdlib.h>
 #include <fstream>
-#include<conio.h>
-#include<cstring>
+#include <conio.h>
+#include <cstring>
+#include <windows.h>
 using namespace std;
+
+void gotoAdd(short int x, short int y)
+{
+    COORD p = {x, y};
+    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), p);
+}
 
 class AddContact
 {
@@ -17,67 +24,66 @@ public:
     void getDetails()
     {
         system("cls");
-        cout << "Enter the Name of the contact: ";
+        cout << endl;
+        cout << "\t\t\t\t----------------------------------------------------------------\n";
+        cout << "\t\t\t\t|                  PHONEBOOK MANAGEMENT SYSTEM                 |\n";
+        cout << "\t\t\t\t----------------------------------------------------------------\n";
+        cout << "\t\t\t\t|             One Place To Manage All Your Contacts            |\n";
+        cout << "\t\t\t\t----------------------------------------------------------------\n";
+        cout << "\t\t\t\t----------------------------------------------------------------\n";
+        cout << "\t\t\t\t|  Enter the Name of the contact:                              |\n";
+        cout << "\t\t\t\t----------------------------------------------------------------\n";
+        gotoAdd(66, 7);
         getline(cin >> ws, contactName);
-        cout << "\nHow many Phone numbers would you like to save under Contact name " << contactName << "? : ";
+        cout << "\t\t\t\t----------------------------------------------------------------\n";
+        cout << "\t\t\t\t|  Enter the number of Phone Numbers:                          |\n";
+        cout << "\t\t\t\t----------------------------------------------------------------\n";
+        gotoAdd(70, 9);
         cin >> no_of_contacts;
         mobileNumber = (long long int *)malloc(sizeof(long long int) * no_of_contacts);
-        cout << "\nEnter the Contact Numbers: \n";
+        cout << "\t\t\t\t----------------------------------------------------------------\n";
+        cout << "\t\t\t\t|  Enter the Contact Numbers (Separated By Spaces):            |\n";
+        cout << "\t\t\t\t|                                                              |\n";
+        cout << "\t\t\t\t|                                                              |\n";
+        cout << "\t\t\t\t|                                                              |\n";
+        cout << "\t\t\t\t|                                                              |\n";
+        cout << "\t\t\t\t----------------------------------------------------------------\n";
+        gotoAdd(35, 12);
         for (int i = 0; i < no_of_contacts; i++)
             cin >> mobileNumber[i];
-    }
-
-    bool confirmDetails()
-    {
-        string decision;
-        cout << "You have Entered: " << contactName << " - ";
-        for (int i = 0; i < no_of_contacts; i++)
-        {
-            cout << mobileNumber[i] << " / ";
-        }
-        cout << "\n\nAre you sure? (Yes/No): ";
-        cin >> decision;
-        if (decision == "Yes")
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
     }
 
     void addContact()
     {
         system("cls");
-        bool isTrue = confirmDetails();
-        if (isTrue)
-        {
-            ofstream out;
-            out.open("contact-list.txt", ios_base::app);
-            out << contactName;
-            
-            if(contactName.length() > 7)
-                out << "\t\t    ";
-            else
-                out << "\t\t\t    ";
 
-            for(int i = 0; i < no_of_contacts; i++)
-            {
-                out << mobileNumber[i] << " / ";
-            }
-            out << "\n";
-            out.close();
-            cout << "\nContact " << contactName << " - ";
-            for (int i = 0; i < no_of_contacts; i++)
-                cout << mobileNumber[i] << " / ";
-            cout << "Addded Successfuly..!!" << endl;
-            getch();
-        }
-        else 
+        ofstream out;
+        out.open("contact-list.txt", ios_base::app);
+        out << contactName;
+
+        if (contactName.length() > 7)
+            out << "\t\t    ";
+        else
+            out << "\t\t\t    ";
+
+        for (int i = 0; i < no_of_contacts; i++)
         {
-            cout << "\nAddition of new Contact Aborted..!!";
-            getch();
-        }   
+            out << mobileNumber[i] << " / ";
+        }
+        out << "\n";
+        out.close();
+
+        system("cls");
+        cout << endl;
+        cout << "\t\t\t\t----------------------------------------------------------------\n";
+        cout << "\t\t\t\t|                  PHONEBOOK MANAGEMENT SYSTEM                 |\n";
+        cout << "\t\t\t\t----------------------------------------------------------------\n";
+        cout << "\t\t\t\t|             One Place To Manage All Your Contacts            |\n";
+        cout << "\t\t\t\t----------------------------------------------------------------\n";
+        cout << "\t\t\t\t|                                                              |\n";
+        cout << "\t\t\t\t|  CONTACT ADDED SUCCESSFULLY..!!                              |\n";
+        cout << "\t\t\t\t|                                                              |\n";
+        cout << "\t\t\t\t----------------------------------------------------------------\n";
+        getch();
     }
 };
