@@ -41,19 +41,14 @@ int main()
         gotoxy(48, 20);
         cin >> choice;
 
-            if (choice == 1)
+        if (choice == 1)
         {
             AddContact contact;
             contact.getDetails();
             contact.addContact();
         }
         else if(choice == 2)
-        {
-            system("cls");
-            cout << "Enter the name of the contact you want to delete: ";
-            getline(cin >> ws, token);
-            RemoveContact remove(token);
-        }
+            RemoveContact remove;
         else if(choice == 3)
         {
             system("cls");
@@ -69,9 +64,7 @@ int main()
             EditContact edit(token);
         }
         else if(choice == 5)
-        {
             DisplayContacts d;
-        }
         else if(choice == 0)
         {
             system("cls");
