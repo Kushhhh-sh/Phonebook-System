@@ -1,11 +1,11 @@
 #include <iostream>
 #include <stdlib.h>
-#include <fstream>
 #include "add-contact.h"
 #include "display-contacts.h"
 #include "search-contact.h"
 #include "remove-contact.h"
 #include "edit-contact.h"
+#include "move-cursor.h"
 using namespace std;
 
 int main()
@@ -15,18 +15,33 @@ int main()
     {
         system("cls");
         int choice;
-        cout << "PHONEBOOK MANAGEMENT SYSTEM\n\n";
-        cout << "Choose from the following operations: \n";
-        cout << "1. Add a Contact\n";
-        cout << "2. Remove a Contact\n";
-        cout << "3. Search a Contact\n";
-        cout << "4. Edit a Contact\n";
-        cout << "5. Display Contact list\n";
-        cout << "0. Exit\n";
-        cout << "\nYour Choice: ";
+
+        cout << endl;
+        cout << "\t\t\t\t------------------------------------------------------\n";
+        cout << "\t\t\t\t|            PHONEBOOK MANAGEMENT SYSTEM             |\n";
+        cout << "\t\t\t\t------------------------------------------------------\n";
+        cout << "\t\t\t\t|       One Place To Manage All Your Contacts        |\n";
+        cout << "\t\t\t\t------------------------------------------------------\n";
+        cout << "\t\t\t\t|                                                    |\n";
+        cout << "\t\t\t\t|  1. Add a New Contact                              |\n";
+        cout << "\t\t\t\t|                                                    |\n";
+        cout << "\t\t\t\t|  2. Delete an Existing Contact                     |\n";
+        cout << "\t\t\t\t|                                                    |\n";
+        cout << "\t\t\t\t|  3. Search a Contact                               |\n";
+        cout << "\t\t\t\t|                                                    |\n";
+        cout << "\t\t\t\t|  4. Edit an existing Contact                       |\n";
+        cout << "\t\t\t\t|                                                    |\n";
+        cout << "\t\t\t\t|  5. Display the Contact List                       |\n";
+        cout << "\t\t\t\t|                                                    |\n";
+        cout << "\t\t\t\t------------------------------------------------------\n";
+        cout << "\t\t\t\t|  6. About                     0. Exit              |\n";
+        cout << "\t\t\t\t------------------------------------------------------\n";
+        cout << "\t\t\t\t|  Your Choice:                                      |\n";
+        cout << "\t\t\t\t------------------------------------------------------\n";
+        gotoxy(48, 20);
         cin >> choice;
 
-        if (choice == 1)
+            if (choice == 1)
         {
             AddContact contact;
             contact.getDetails();
