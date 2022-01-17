@@ -10,18 +10,18 @@ class SearchContacts
 {
 private:
     string s;
-    ifstream stream;
+    ifstream in;
 
 public:
     SearchContacts(string token)
     {
         transform(token.begin(), token.end(), token.begin(), ::tolower);
-        stream.open("contact-list.txt");
+        in.open("contact-list.txt");
         bool foundItem = false;
 
         cout << "\n\nSearch Results for " << token << ": \n\n";
 
-        while (getline(stream, s))
+        while (getline(in, s))
         {
             string g = s;
             transform(g.begin(), g.end(), g.begin(), ::tolower);
@@ -38,6 +38,6 @@ public:
 
     ~SearchContacts()
     {
-        stream.close();
+        in.close();
     }
 };

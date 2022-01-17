@@ -53,6 +53,7 @@ public:
         else
         {
             cout << "Contact Edited Successfully..!!" << endl;
+            getch();
         }
     }
 
