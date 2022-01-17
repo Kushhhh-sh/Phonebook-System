@@ -20,6 +20,7 @@ public:
         bool foundItem = false;
 
         cout << "\n\nSearch Results for " << token << ": \n\n";
+        cout << "ContactName                 ContactNumber\n----------------------------------------------\n";
 
         while (getline(in, s))
         {
@@ -32,7 +33,7 @@ public:
             }
         }
         if (!foundItem)
-            cout << token << " not found" << endl;
+            cout << "No Contacts Found Named: " << token << endl;
         getch();
     }
 

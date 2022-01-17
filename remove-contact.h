@@ -27,7 +27,7 @@ public:
             transform(g.begin(), g.end(), g.begin(), ::tolower);
             if (g.find(name) != string::npos)
             {
-                cout << "Your are about to delete a contact named " << name << endl;
+                cout << "\nYou are about to delete a contact named " << name << endl;
                 cout << "Are you sure? (Yes/No) : ";
                 cin >> decision;
                 if (decision == "Yes")

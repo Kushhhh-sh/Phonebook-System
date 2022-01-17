@@ -35,10 +35,10 @@ public:
             else
             {
                 contactEdited = true;
-                cout << "Enter the new number of Phone Numbers for this contact: ";
+                cout << "\nEnter the new number of Phone Numbers for this contact: ";
                 cin >> no_of_contacts;
                 mobileNo = (long long int*) malloc(sizeof(long long int) * no_of_contacts);
-                cout << "Enter the new Phone Numbers: \n";
+                cout << "\nEnter the new Phone Numbers: \n";
                 for(int i = 0; i < no_of_contacts; i++)
                     cin >> mobileNo[i];
                 addEditedContact();
@@ -46,13 +46,13 @@ public:
         }
         if (!contactEdited)
         {
-            cout << "No Contact found named: " << name << endl;
+            cout << "\nNo Contact found named: " << name << endl;
             cout << "Editing Aborted..!!" << endl;
             getch();
         }
         else
         {
-            cout << "Contact Edited Successfully..!!" << endl;
+            cout << "\nContact Edited Successfully..!!" << endl;
             getch();
         }
     }
@@ -63,9 +63,9 @@ public:
         out << n;
 
         if (n.length() > 7)
-            out << "\t\t\t\t\t";
+            out << "\t\t    ";
         else
-            out << "\t\t\t\t\t\t";
+            out << "\t\t\t    ";
 
         for (int i = 0; i < no_of_contacts; i++)
         {

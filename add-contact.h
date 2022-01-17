@@ -19,10 +19,10 @@ public:
         system("cls");
         cout << "Enter the Name of the contact: ";
         getline(cin >> ws, contactName);
-        cout << "How many Phone numbers would you like to save under Contact name " << contactName << "? : ";
+        cout << "\nHow many Phone numbers would you like to save under Contact name " << contactName << "? : ";
         cin >> no_of_contacts;
         mobileNumber = (long long int *)malloc(sizeof(long long int) * no_of_contacts);
-        cout << "Enter the Contact Numbers: \n";
+        cout << "\nEnter the Contact Numbers: \n";
         for (int i = 0; i < no_of_contacts; i++)
             cin >> mobileNumber[i];
     }
@@ -35,7 +35,7 @@ public:
         {
             cout << mobileNumber[i] << " / ";
         }
-        cout << "\nAre you sure? (Yes/No): ";
+        cout << "\n\nAre you sure? (Yes/No): ";
         cin >> decision;
         if (decision == "Yes")
         {
@@ -58,9 +58,9 @@ public:
             out << contactName;
             
             if(contactName.length() > 7)
-                out << "\t\t\t\t\t";
+                out << "\t\t    ";
             else
-                out << "\t\t\t\t\t\t";
+                out << "\t\t\t    ";
 
             for(int i = 0; i < no_of_contacts; i++)
             {
@@ -68,7 +68,7 @@ public:
             }
             out << "\n";
             out.close();
-            cout << "Contact " << contactName << " - ";
+            cout << "\nContact " << contactName << " - ";
             for (int i = 0; i < no_of_contacts; i++)
                 cout << mobileNumber[i] << " / ";
             cout << "Addded Successfuly..!!" << endl;
@@ -76,7 +76,7 @@ public:
         }
         else 
         {
-            cout << "Addition of new Contact Aborted..!!";
+            cout << "\nAddition of new Contact Aborted..!!";
             getch();
         }   
     }
