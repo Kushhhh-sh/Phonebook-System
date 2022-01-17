@@ -2,6 +2,7 @@
 #include <iostream>
 #include <stdlib.h>
 #include <fstream>
+#include<conio.h>
 #include<cstring>
 using namespace std;
 
@@ -67,8 +68,16 @@ public:
             }
             out << "\n";
             out.close();
+            cout << "Contact " << contactName << " - ";
+            for (int i = 0; i < no_of_contacts; i++)
+                cout << mobileNumber[i] << " / ";
+            cout << "Addded Successfuly..!!" << endl;
+            getch();
         }
-        else    
-            cout << "Error";
+        else 
+        {
+            cout << "Addition of new Contact Aborted..!!";
+            getch();
+        }   
     }
 };

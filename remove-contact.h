@@ -3,44 +3,60 @@
 #include <stdlib.h>
 #include <fstream>
 #include <conio.h>
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 class RemoveContact
 {
 private:
     string line;
+    string decision;
     ifstream in;
     ofstream out;
     bool contactDeleted = false;
+
 public:
     RemoveContact(string name)
     {
         transform(name.begin(), name.end(), name.begin(), ::tolower);
         in.open("contact-list.txt");
         out.open("temp.txt");
-        while(getline(in, line))
+        while (getline(in, line))
         {
             string g = line;
             transform(g.begin(), g.end(), g.begin(), ::tolower);
-            if(g.find(name) == string::npos)
+            if (g.find(name) != string::npos)
             {
-                out << line << "\n";
+                cout << "Your are about to delete a contact named " << name << endl;
+                cout << "Are you sure? (Yes/No) : ";
+                cin >> decision;
+                if (decision == "Yes")
+                {
+                    contactDeleted = true;
+                    cout << "\nDeleted Contact: \n"
+                         << line;
+                    getch();
+                }
+                else
+                {
+                    contactDeleted = true;
+                    out << line << "\n";
+                    cout << "Deletion Aborted..!!" << endl;
+                    getch();
+                }
             }
             else
             {
-                contactDeleted = true;
-                cout << "\nDeleted Contact: \n" << line;
-                getch();
+                out << line << "\n";
             }
         }
-        if(!contactDeleted)
+        if (!contactDeleted)
         {
             cout << "No Contact found named: " << name << endl;
             cout << "Deletion Aborted..!!" << endl;
             getch();
         }
-    }    
+    }
     ~RemoveContact()
     {
         in.close();
