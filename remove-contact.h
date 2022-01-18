@@ -33,12 +33,14 @@ public:
         cout << "\t\t\t\t----------------------------------------------------------------\n";
         cout << "\t\t\t\t|             One Place To Manage All Your Contacts            |\n";
         cout << "\t\t\t\t----------------------------------------------------------------\n";
+        cout << "\t\t\t\t|                    DELETE EXISTING CONTACTS                  |\n";
+        cout << "\t\t\t\t----------------------------------------------------------------\n";
         cout << "\t\t\t\t----------------------------------------------------------------\n";
         cout << "\t\t\t\t|  Enter the name of the contact you                           |\n";
         cout << "\t\t\t\t|  want to delete:                                             |\n";
         cout << "\t\t\t\t----------------------------------------------------------------\n";        
        
-        gotoRemove(51, 8);
+        gotoRemove(51, 10);
         getline(cin >> ws, name);
         transform(name.begin(), name.end(), name.begin(), ::tolower);
         in.open("contact-list.txt");
@@ -53,7 +55,7 @@ public:
                 cout << "\t\t\t\t|  You are about to Delete a contact                           |\n";
                 cout << "\t\t\t\t|  Are You Sure? (Yes/No) :                                    |\n";
                 cout << "\t\t\t\t----------------------------------------------------------------\n";
-                gotoRemove(60, 11);
+                gotoRemove(60, 13);
                 cin >> decision;
                 if (decision == "Yes")
                 {

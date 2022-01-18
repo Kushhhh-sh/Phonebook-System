@@ -28,10 +28,12 @@ public:
         cout << "\t\t\t\t----------------------------------------------------------------\n";
         cout << "\t\t\t\t|             One Place To Manage All Your Contacts            |\n";
         cout << "\t\t\t\t----------------------------------------------------------------\n";
+        cout << "\t\t\t\t|                        SEARCH CONTACTS                       |\n";
+        cout << "\t\t\t\t----------------------------------------------------------------\n";
         cout << "\t\t\t\t----------------------------------------------------------------\n";
         cout << "\t\t\t\t|  Enter the Keyword you want to search:                       |\n";
         cout << "\t\t\t\t----------------------------------------------------------------\n";
-        gotoSearch(73, 7);
+        gotoSearch(73, 9);
         cin >> token;
         transform(token.begin(), token.end(), token.begin(), ::tolower);
         in.open("contact-list.txt");

@@ -30,15 +30,17 @@ public:
         cout << "\t\t\t\t----------------------------------------------------------------\n";
         cout << "\t\t\t\t|             One Place To Manage All Your Contacts            |\n";
         cout << "\t\t\t\t----------------------------------------------------------------\n";
+        cout << "\t\t\t\t|                         ADD CONTACTS                         |\n";
+        cout << "\t\t\t\t----------------------------------------------------------------\n";
         cout << "\t\t\t\t----------------------------------------------------------------\n";
         cout << "\t\t\t\t|  Enter the Name of the contact:                              |\n";
         cout << "\t\t\t\t----------------------------------------------------------------\n";
-        gotoAdd(66, 7);
+        gotoAdd(66, 9);
         getline(cin >> ws, contactName);
         cout << "\t\t\t\t----------------------------------------------------------------\n";
         cout << "\t\t\t\t|  Enter the number of Phone Numbers:                          |\n";
         cout << "\t\t\t\t----------------------------------------------------------------\n";
-        gotoAdd(70, 9);
+        gotoAdd(70, 11);
         cin >> no_of_contacts;
         mobileNumber = (long long int *)malloc(sizeof(long long int) * no_of_contacts);
         cout << "\t\t\t\t----------------------------------------------------------------\n";
@@ -48,7 +50,7 @@ public:
         cout << "\t\t\t\t|                                                              |\n";
         cout << "\t\t\t\t|                                                              |\n";
         cout << "\t\t\t\t----------------------------------------------------------------\n";
-        gotoAdd(35, 12);
+        gotoAdd(35, 14);
         for (int i = 0; i < no_of_contacts; i++)
             cin >> mobileNumber[i];
     }
@@ -79,6 +81,8 @@ public:
         cout << "\t\t\t\t|                  PHONEBOOK MANAGEMENT SYSTEM                 |\n";
         cout << "\t\t\t\t----------------------------------------------------------------\n";
         cout << "\t\t\t\t|             One Place To Manage All Your Contacts            |\n";
+        cout << "\t\t\t\t----------------------------------------------------------------\n";
+        cout << "\t\t\t\t|                         ADD CONTACTS                         |\n";
         cout << "\t\t\t\t----------------------------------------------------------------\n";
         cout << "\t\t\t\t|                                                              |\n";
         cout << "\t\t\t\t|  CONTACT ADDED SUCCESSFULLY..!!                              |\n";
