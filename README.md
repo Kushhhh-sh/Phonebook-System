@@ -7,7 +7,7 @@
     - Searching for contacts with keywords
     - Editing an Existing contact
     - Displaying the List of contacts
-
+- ### All the contacts are stored in a text file named [`contact-list.txt`](https://github.com/Kushhhh-sh/Phonebook-System/blob/master/contact-list.txt)
 - ### In order to use this program, you need to download the Source Code from [Here](https://github.com/Kushhhh-sh/Phonebook-System/releases).
 - ### After downloading, open the folder containing `main.exe` and all the other supporting files.
 - ### Open the folder in Terminal
