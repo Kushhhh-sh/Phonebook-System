@@ -57,11 +57,8 @@ int main()
             SearchContacts search(token);
         }
         else if(choice == 4)
-        {
-            system("cls");
-            cout << "Enter the name of the contact you want to edit: ";
-            getline(cin >> ws, token);
-            EditContact edit(token);
+        {            
+            EditContact edit;
         }
         else if(choice == 5)
             DisplayContacts d;

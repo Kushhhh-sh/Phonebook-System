@@ -1,25 +1,44 @@
 #pragma once
-#include<iostream>
-#include<fstream>
-#include<stdlib.h>
-#include<conio.h>
-#include<bits/stdc++.h>
+#include <iostream>
+#include <fstream>
+#include <stdlib.h>
+#include <conio.h>
+#include <bits/stdc++.h>
 using namespace std;
+
+void gotoEdit(short int x, short int y)
+{
+    COORD p = {x, y};
+    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), p);
+}
 
 class EditContact
 {
 private:
-    string n;
+    string n, name;
     long long int *mobileNo;
     int no_of_contacts;
     string line;
     ifstream in;
     ofstream out;
     bool contactEdited = false;
-public:
 
-    EditContact(string name)
+public:
+    EditContact()
     {
+        system("cls");
+        cout << endl;
+        cout << "\t\t\t\t----------------------------------------------------------------\n";
+        cout << "\t\t\t\t|                  PHONEBOOK MANAGEMENT SYSTEM                 |\n";
+        cout << "\t\t\t\t----------------------------------------------------------------\n";
+        cout << "\t\t\t\t|             One Place To Manage All Your Contacts            |\n";
+        cout << "\t\t\t\t----------------------------------------------------------------\n";
+        cout << "\t\t\t\t----------------------------------------------------------------\n";
+        cout << "\t\t\t\t|  Enter the Name of the contact                               |\n";
+        cout << "\t\t\t\t|  you want to edit:                                           |\n";
+        cout << "\t\t\t\t----------------------------------------------------------------\n";
+        gotoEdit(53, 8);
+        getline(cin >> ws, name);
         n = name;
         transform(name.begin(), name.end(), name.begin(), ::tolower);
         in.open("contact-list.txt");
@@ -35,24 +54,48 @@ public:
             else
             {
                 contactEdited = true;
-                cout << "\nEnter the new number of Phone Numbers for this contact: ";
+                cout << "\t\t\t\t----------------------------------------------------------------\n";
+                cout << "\t\t\t\t|  Enter the number of Phone Numbers:                          |\n";
+                cout << "\t\t\t\t----------------------------------------------------------------\n";
+                gotoEdit(70, 10);
                 cin >> no_of_contacts;
-                mobileNo = (long long int*) malloc(sizeof(long long int) * no_of_contacts);
-                cout << "\nEnter the new Phone Numbers: \n";
-                for(int i = 0; i < no_of_contacts; i++)
+                mobileNo = (long long int *)malloc(sizeof(long long int) * no_of_contacts);
+                cout << "\t\t\t\t----------------------------------------------------------------\n";
+                cout << "\t\t\t\t|  Enter the Contact Numbers (Separated By Spaces):            |\n";
+                cout << "\t\t\t\t|                                                              |\n";
+                cout << "\t\t\t\t|                                                              |\n";
+                cout << "\t\t\t\t|                                                              |\n";
+                cout << "\t\t\t\t|                                                              |\n";
+                cout << "\t\t\t\t----------------------------------------------------------------\n";
+                gotoEdit(35, 13);
+                for (int i = 0; i < no_of_contacts; i++)
                     cin >> mobileNo[i];
                 addEditedContact();
             }
         }
         if (!contactEdited)
         {
-            cout << "\nNo Contact found named: " << name << endl;
-            cout << "Editing Aborted..!!" << endl;
+            cout << "\t\t\t\t----------------------------------------------------------------\n";
+            cout << "\t\t\t\t|                                                              |\n";
+            cout << "\t\t\t\t|  NO CONTACT FOUND                                            |\n";
+            cout << "\t\t\t\t|  EDITING CONTACTS ABORTED..!!                                |\n";
+            cout << "\t\t\t\t|                                                              |\n";
+            cout << "\t\t\t\t----------------------------------------------------------------\n";
             getch();
         }
         else
         {
-            cout << "\nContact Edited Successfully..!!" << endl;
+            system("cls");
+            cout << endl;
+            cout << "\t\t\t\t----------------------------------------------------------------\n";
+            cout << "\t\t\t\t|                  PHONEBOOK MANAGEMENT SYSTEM                 |\n";
+            cout << "\t\t\t\t----------------------------------------------------------------\n";
+            cout << "\t\t\t\t|             One Place To Manage All Your Contacts            |\n";
+            cout << "\t\t\t\t----------------------------------------------------------------\n";
+            cout << "\t\t\t\t|                                                              |\n";
+            cout << "\t\t\t\t|  CONTACT EDITED SUCCESSFULLY..!!                             |\n";
+            cout << "\t\t\t\t|                                                              |\n";
+            cout << "\t\t\t\t----------------------------------------------------------------\n";
             getch();
         }
     }
