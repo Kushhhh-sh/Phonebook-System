@@ -62,11 +62,8 @@ public:
         ofstream out;
         out.open("contact-list.txt", ios_base::app);
         out << contactName;
-
-        if (contactName.length() > 7)
-            out << "\t\t    ";
-        else
-            out << "\t\t\t    ";
+        for(int i = 0; i < (30 - contactName.length()); i++)
+            out << " ";
 
         for (int i = 0; i < no_of_contacts; i++)
         {

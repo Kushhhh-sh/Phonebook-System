@@ -109,10 +109,8 @@ public:
         // out.open("temp.txt", ios_base::app);
         out << n;
 
-        if (n.length() > 7)
-            out << "\t\t    ";
-        else
-            out << "\t\t\t    ";
+        for (int i = 0; i < (30 - n.length()); i++)
+            out << " ";
 
         for (int i = 0; i < no_of_contacts; i++)
         {

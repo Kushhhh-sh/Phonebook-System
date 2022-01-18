@@ -40,7 +40,7 @@ public:
         bool foundItem = false;
 
         cout << "\n\t\t\t\t   Search Results for " << token << ": \n\n";
-        cout << "\t\t\t\t   ContactName                 ContactNumber\n\t\t\t\t   ----------------------------------------------\n";
+        cout << "\t\t\t\t   ContactName                   ContactNumber\n\t\t\t\t   ----------------------------------------------\n";
 
         while (getline(in, s))
         {
