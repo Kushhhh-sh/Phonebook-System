@@ -52,7 +52,8 @@ PS D:\Kush3\Desktop\College\GitHub\Phonebook-System> .\main.exe
 <br>
 
 ### Editing a contact
-![edit](src/img/edit.png)
+![edit](src/img/edit1.png)
+![edit2](src/img/edit2.png)
 
 <br>
 
