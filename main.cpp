@@ -49,17 +49,10 @@ int main()
         }
         else if(choice == 2)
             RemoveContact remove;
-        else if(choice == 3)
-        {
-            system("cls");
-            cout << "Enter the Keyword you want to search: ";
-            cin >> token;
-            SearchContacts search(token);
-        }
-        else if(choice == 4)
-        {            
+        else if(choice == 3)            
+            SearchContacts search;
+        else if(choice == 4)           
             EditContact edit;
-        }
         else if(choice == 5)
             DisplayContacts d;
         else if(choice == 0)
